@@ -31,6 +31,7 @@
         .container {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
@@ -39,10 +40,13 @@
         .main {
             flex: 3;
             padding-right: 40px;
+            min-width: 0;
         }
 
         .sidebar {
             flex: 1;
+            min-width: 300px;
+            margin-top: 40px;
         }
 
         h1,
@@ -116,7 +120,47 @@
         .title {
             padding: 1em 0;
         }
+
+        /* Responsive Layout */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px 10px;
+            }
+
+            .main {
+                padding-right: 0;
+            }
+
+            .sidebar {
+                margin-top: 20px;
+                margin-bottom: 10vh;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header img {
+                margin-top: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .cta-button {
+                width: 90%;
+                text-align: center;
+            }
+        }
     </style>
+
 </head>
 
 <body>
